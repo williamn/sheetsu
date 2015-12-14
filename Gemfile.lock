@@ -26,10 +26,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.10)
+  bundler (~> 1.11)
   rake (~> 10.0)
-  rspec
+  rspec (~> 3.0)
   sheetsu!
 
 BUNDLED WITH
-   1.10.6
+   1.11.0
