@@ -5,7 +5,9 @@ describe Sheetsu do
     expect(Sheetsu::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  it 'return array of all rows from spreadsheet' do
+    client = Sheetsu::Client.new
+    response = client.get
+    expect(response.body).to eql([])
   end
 end
