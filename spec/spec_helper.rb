@@ -25,5 +25,14 @@ RSpec.configure do |config|
           'User-Agent' => 'Ruby'
         })
       .to_return(status: 404, body: nil, headers: {})
+
+    stub_request(:get, 'http://sheetsu.com/apis/baz/')
+      .with(
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Ruby'
+        })
+      .to_return(status: 500, body: nil, headers: {})
   end
 end

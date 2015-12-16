@@ -1,5 +1,3 @@
-require 'httparty'
-
 module Sheetsu
   class Client
     include HTTParty
@@ -9,7 +7,10 @@ module Sheetsu
     end
 
     def get
-      self.class.get('/')
+      response = self.class.get('/')
+
+      ErrorHandler.response_code_to_exception response
+      response
     end
   end
 end

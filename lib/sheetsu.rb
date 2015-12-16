@@ -1,6 +1,7 @@
+require 'httparty'
 require "sheetsu/version"
-require "sheetsu/client"
 
 module Sheetsu
-  # Your code goes here...
+  require "sheetsu/errors"
+  require "sheetsu/client"
 end
