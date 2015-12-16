@@ -34,5 +34,17 @@ RSpec.configure do |config|
           'User-Agent' => 'Ruby'
         })
       .to_return(status: 500, body: nil, headers: {})
+
+    stub_request(:get, 'http://sheetsu.com/apis/foo/column/Name')
+      .with(
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Ruby'
+        })
+      .to_return(
+        status: 200,
+        body: '{"status": 200, "success": true, "result": ["Peter", "Lois", "Meg", "Chris", "Stewie", "Brian"]}',
+        headers: {})
   end
 end

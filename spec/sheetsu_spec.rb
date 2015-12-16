@@ -16,4 +16,10 @@ describe Sheetsu do
     client = Sheetsu::Client.new('baz')
     expect { client.get }.to raise_error('Something goes wrong')
   end
+
+  it 'returns array of all row of chosen column' do
+    client = Sheetsu::Client.new('foo')
+    response = client.get_column('Name')
+    expect(JSON.parse(response.body)).to eql({"status"=>200, "success"=>true, "result"=>["Peter", "Lois", "Meg", "Chris", "Stewie", "Brian"]})
+  end
 end

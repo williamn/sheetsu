@@ -12,5 +12,12 @@ module Sheetsu
       ErrorHandler.response_code_to_exception response
       response
     end
+
+    def get_column(name)
+      response = self.class.get("/column/#{name}")
+
+      ErrorHandler.response_code_to_exception response
+      response
+    end
   end
 end
