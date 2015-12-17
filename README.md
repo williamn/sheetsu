@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/williamn/sheetsu.svg?branch=master)](https://travis-ci.org/williamn/sheetsu)
+
 # Sheetsu
 
 Sheetsu API wrapper
