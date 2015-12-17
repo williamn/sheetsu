@@ -5,7 +5,8 @@ engines:
   duplication:
     enabled: true
     config:
-      languages: ruby
+      languages:
+      - ruby
   fixme:
     enabled: true
   rubocop:
