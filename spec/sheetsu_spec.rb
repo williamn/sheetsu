@@ -4,7 +4,7 @@ describe Sheetsu do
   it 'return array of all rows from spreadsheet' do
     client = Sheetsu::Client.new('foo')
     response = client.get
-    expect(JSON.parse(response.body)).to eql({"status"=>200, "success"=>true, "result"=>[]})
+    expect(JSON.parse(response.body)).to eql('status' => 200, 'success' => true, 'result' => [])
   end
 
   it 'raise error when API is not found' do
@@ -20,6 +20,6 @@ describe Sheetsu do
   it 'returns array of all row of chosen column' do
     client = Sheetsu::Client.new('foo')
     response = client.get_column('Name')
-    expect(JSON.parse(response.body)).to eql({"status"=>200, "success"=>true, "result"=>["Peter", "Lois", "Meg", "Chris", "Stewie", "Brian"]})
+    expect(JSON.parse(response.body)).to eql('status' => 200, 'success' => true, 'result' => %w(Peter Lois Meg Chris Stewie Brian))
   end
 end

@@ -4,10 +4,10 @@ module Sheetsu
 
     def self.response_code_to_exception(response)
       case response.code
-        when 404
-          raise Error, 'API with given URL is not found'
-        when 500
-          raise Error, 'Something goes wrong'
+      when 404
+        fail Error, 'API with given URL is not found'
+      when 500
+        fail Error, 'Something goes wrong'
       end
     end
   end
