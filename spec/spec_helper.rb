@@ -5,7 +5,7 @@ require 'webmock/rspec'
 require 'codeclimate-test-reporter'
 SimpleCov.start
 CodeClimate::TestReporter.start
-WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.disable_net_connect!(allow: [/localhost/, '/codeclimate/'])
 
 RSpec.configure do |config|
   config.before(:each) do
