@@ -1,7 +1,9 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'simplecov'
 require 'sheetsu'
 require 'webmock/rspec'
 require 'codeclimate-test-reporter'
+SimpleCov.start
 CodeClimate::TestReporter.start
 WebMock.disable_net_connect!(allow_localhost: true)
 
