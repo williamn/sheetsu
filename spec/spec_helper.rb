@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'sheetsu'
 require 'webmock/rspec'
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
