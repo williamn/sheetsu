@@ -9,7 +9,7 @@ WebMock.disable_net_connect!(allow: 'codeclimate.com')
 
 RSpec.configure do |config|
   config.before(:each) do
-    stub_request(:get, 'http://sheetsu.com/apis/foo/')
+    stub_request(:get, 'https://sheetsu.com/apis/foo')
       .with(
         headers: {
           'Accept' => '*/*',
@@ -21,7 +21,7 @@ RSpec.configure do |config|
         body: '{"status": 200, "success": true, "result": []}',
         headers: {})
 
-    stub_request(:get, 'http://sheetsu.com/apis/blah/')
+    stub_request(:get, 'https://sheetsu.com/apis/blah')
       .with(
         headers: {
           'Accept' => '*/*',
@@ -30,7 +30,7 @@ RSpec.configure do |config|
         })
       .to_return(status: 404, body: nil, headers: {})
 
-    stub_request(:get, 'http://sheetsu.com/apis/baz/')
+    stub_request(:get, 'https://sheetsu.com/apis/baz')
       .with(
         headers: {
           'Accept' => '*/*',
@@ -39,7 +39,7 @@ RSpec.configure do |config|
         })
       .to_return(status: 500, body: nil, headers: {})
 
-    stub_request(:get, 'http://sheetsu.com/apis/foo/column/Name')
+    stub_request(:get, 'https://sheetsu.com/apis/foo/column/Name')
       .with(
         headers: {
           'Accept' => '*/*',
@@ -51,7 +51,7 @@ RSpec.configure do |config|
         body: '{"status": 200, "success": true, "result": ["Peter", "Lois", "Meg", "Chris", "Stewie", "Brian"]}',
         headers: {})
 
-    stub_request(:get, 'http://sheetsu.com/apis/foo/column/baz')
+    stub_request(:get, 'https://sheetsu.com/apis/foo/column/baz')
       .with(
         headers: {
           'Accept' => '*/*',
@@ -60,7 +60,7 @@ RSpec.configure do |config|
         })
       .to_return(status: 404, body: nil, headers: {})
 
-    stub_request(:post, 'http://sheetsu.com/apis/foo/')
+    stub_request(:post, 'https://sheetsu.com/apis/foo')
       .with(
         headers: {
           'Content-Type'=>'application/json'
@@ -71,7 +71,7 @@ RSpec.configure do |config|
         body: nil,
         headers: {})
 
-    stub_request(:post, 'http://sheetsu.com/apis/blah/')
+    stub_request(:post, 'https://sheetsu.com/apis/blah')
       .with(
         headers: {
           'Content-Type'=>'application/json'
