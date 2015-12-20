@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sheetsu (0.1.0)
+    sheetsu (0.1.1)
       httparty (~> 0.13.7)
 
 GEM
