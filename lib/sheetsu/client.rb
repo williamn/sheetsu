@@ -19,5 +19,17 @@ module Sheetsu
       ErrorHandler.response_code_to_exception response
       response
     end
+
+    def create(body)
+      options = {
+        headers: { 'Content-Type' => 'application/json' },
+        body: body.to_json
+      }
+
+      response = self.class.post('/', options)
+
+      ErrorHandler.response_code_to_exception response
+      response
+    end
   end
 end
