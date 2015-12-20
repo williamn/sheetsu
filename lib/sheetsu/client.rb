@@ -3,30 +3,26 @@ module Sheetsu
     include HTTParty
 
     def initialize(id)
-      self.class.base_uri "sheetsu.com/apis/#{id}"
+      @id = id
+      self.class.base_uri "https://sheetsu.com/apis"
     end
 
     def get
-      response = self.class.get('/')
+      response = self.class.get("/#{@id}")
 
       ErrorHandler.response_code_to_exception response
       response
     end
 
     def get_column(name)
-      response = self.class.get("/column/#{name}")
+      response = self.class.get("/#{@id}/column/#{name}")
 
       ErrorHandler.response_code_to_exception response
       response
     end
 
-    def create(body)
-      options = {
-        headers: { 'Content-Type' => 'application/json' },
-        body: body.to_json
-      }
-
-      response = self.class.post('/', options)
+    def create(row)
+      response = self.class.post("/#{@id}", body: row.to_json, headers: { 'Content-Type' => 'application/json' })
 
       ErrorHandler.response_code_to_exception response
       response
