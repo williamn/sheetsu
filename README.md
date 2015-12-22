@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/sheetsu.svg)](https://badge.fury.io/rb/sheetsu)
 [![Build Status](https://travis-ci.org/williamn/sheetsu.svg?branch=master)](https://travis-ci.org/williamn/sheetsu)
 [![Code Climate](https://codeclimate.com/github/williamn/sheetsu/badges/gpa.svg)](https://codeclimate.com/github/williamn/sheetsu)
 [![Test Coverage](https://codeclimate.com/github/williamn/sheetsu/badges/coverage.svg)](https://codeclimate.com/github/williamn/sheetsu/coverage)
