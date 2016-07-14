@@ -25,20 +25,22 @@ Or install it yourself as:
 
 ## Usage
 
-    require 'bundler/setup'
-    require 'sheetsu'
+```ruby
+require 'bundler/setup'
+require 'sheetsu'
 
-    client = Sheetsu::Client.new('ebe5b0fa')
+client = Sheetsu::Client.new('ebe5b0fa')
 
-    response = client.get
-    # {"status"=>200, "success"=>true, "result"=>[]}
+response = client.get
+# {"status"=>200, "success"=>true, "result"=>[]}
 
-    player = { number: '4', name: 'Chris Webber', position: 'Forward' }
-    response = client.create(player)
-    # {"status"=>201, "success"=>true, "result"=>"Created."}
+player = { number: '4', name: 'Chris Webber', position: 'Forward' }
+response = client.create(player)
+# {"status"=>201, "success"=>true, "result"=>"Created."}
 
-    response = client.get_column('name')
-    # {"status"=>200, "success"=>true, "result"=>["Chris Webber"]}
+response = client.get_column('name')
+# {"status"=>200, "success"=>true, "result"=>["Chris Webber"]}
+```
 
 ## Development
 
